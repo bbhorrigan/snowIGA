@@ -17,7 +17,7 @@ This project provides a **collection of automation scripts** designed to **integ
 
 ## 📂 Repository Structure
 snowIGA
-├── scripts
+├── scripts/
 │   ├── common/          # ✅ Shared utilities for Snowflake authentication & logging
 │   │   ├── snowflake_connector.py
 │   │   ├── config.yaml
@@ -32,21 +32,40 @@ snowIGA
 │   │   ├── provision_users.py
 │   │   ├── sync_roles.py
 │   │   ├── generate_access_reports.py
-├── docs/                # ✅ Documentation on setup, API references & troubleshooting
+├── terraform/           # ✅ New Terraform module for Snowflake IGA automation
+│   ├── main.tf              # Main Terraform configuration
+│   ├── providers.tf         # Snowflake provider setup
+│   ├── variables.tf         # Variables for flexibility
+│   ├── outputs.tf           # Terraform outputs
+│   ├── modules/
+│   │   ├── users/           # ✅ User provisioning module
+│   │   │   ├── users.tf
+│   │   │   ├── variables.tf
+│   │   │   ├── outputs.tf
+│   │   ├── roles/           # ✅ Role management module
+│   │   │   ├── roles.tf
+│   │   │   ├── variables.tf
+│   │   │   ├── outputs.tf
+│   │   ├── policies/        # ✅ Network security policies
+│   │   │   ├── policies.tf
+│   │   │   ├── variables.tf
+│   │   │   ├── outputs.tf
+│   ├── terraform.tfvars     # User-specific values
+│   ├── README.md            # Documentation for Terraform
+├── docs/
 │   ├── setup_guide.md
 │   ├── API_reference.md
 │   ├── integration_steps.md
 │   ├── troubleshooting.md
-├── tests/               # ✅ Automated tests for Snowflake connections & provisioning
+├── tests/
 │   ├── test_snowflake_connection.py
 │   ├── test_provisioning.py
 │   ├── test_role_sync.py
-├── .github/workflows/   # ✅ CI/CD pipeline for automated testing
-│   ├── ci.yml
-├── .gitignore           # Files to ignore in Git
-├── LICENSE              # Open-source license
-├── README.md            # 👈 You are here! 🎉
-
+├── .github/workflows/
+│   ├── ci.yml  # ✅ CI/CD pipeline for automated testing
+├── .gitignore
+├── LICENSE
+├── README.md  # 👈 You are here! 
 
 ---
 
