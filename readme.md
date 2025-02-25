@@ -130,13 +130,7 @@ Snowflake Version: X.X.X
 
 ---
 
-## 🏗 **Contributing**
-Contributions are welcome! 🎉  
-To contribute:
-1. Fork the repository.
-2. Create a new branch (`feature-new-script`).
-3. Commit your changes and push to your branch.
-4. Open a Pull Request (PR).
+
 
 ---
 
