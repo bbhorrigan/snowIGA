@@ -1,12 +1,11 @@
-
 ### **📄 `Read Me**
-```md
+
 # Snowflake IGA Helper Scripts
 
  **Snowflake IGA Helper Scripts**  
 This project provides a **collection of automation scripts** designed to **integrate Snowflake with IGA (Identity Governance and Administration) tools**, such as **SailPoint** and **Saviynt**.
 
-## 📌 Features
+## Features
 Automates **user provisioning & deprovisioning** in Snowflake.  
 **Synchronizes roles** between IGA tools and Snowflake.  
 Supports **OAuth, Key Pair, and Password authentication** for Snowflake.  
@@ -14,7 +13,7 @@ Provides **audit logs & reporting** for access governance.
 Built-in **GitHub Actions CI/CD** for automated testing.
 
 ---
-
+```
 ## 📂 Repository Structure
 snowIGA
 ├── scripts/
@@ -68,8 +67,9 @@ snowIGA
 ├── README.md  # 👈 You are here! 
 
 ---
+```
+###  **Getting Started**
 
-## 🚀 **Getting Started**
 ### 🔹 **1. Clone the Repository**
 ```bash
 git clone https://github.com/bbhorrigan/snowIGA.git
@@ -142,4 +142,3 @@ To contribute:
 
 
 ```
-
