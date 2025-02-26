@@ -17,35 +17,35 @@ Built-in **GitHub Actions CI/CD** for automated testing.
 ## 📂 Repository Structure
 snowIGA
 ├── scripts/
-│   ├── common/          # ✅ Shared utilities for Snowflake authentication & logging
+│   ├── common/          #  Shared utilities for Snowflake authentication & logging
 │   │   ├── snowflake_connector.py
 │   │   ├── config.yaml
 │   │   ├── logging_setup.py
 │   │   ├── utils.py
-│   ├── sailpoint/       # ✅ SailPoint-specific automation scripts
+│   ├── sailpoint/       #  SailPoint-specific automation scripts
 │   │   ├── create_snowflake_users.py
 │   │   ├── assign_roles.py
 │   │   ├── revoke_access.py
 │   │   ├── sync_sailpoint_snowflake.py
-│   ├── saviynt/         # ✅ Saviynt-specific automation scripts
+│   ├── saviynt/         #  Saviynt-specific automation scripts
 │   │   ├── provision_users.py
 │   │   ├── sync_roles.py
 │   │   ├── generate_access_reports.py
-├── terraform/           # ✅ New Terraform module for Snowflake IGA automation
+├── terraform/           #  New Terraform module for Snowflake IGA automation
 │   ├── main.tf              # Main Terraform configuration
 │   ├── providers.tf         # Snowflake provider setup
 │   ├── variables.tf         # Variables for flexibility
 │   ├── outputs.tf           # Terraform outputs
 │   ├── modules/
-│   │   ├── users/           # ✅ User provisioning module
+│   │   ├── users/           # User provisioning module
 │   │   │   ├── users.tf
 │   │   │   ├── variables.tf
 │   │   │   ├── outputs.tf
-│   │   ├── roles/           # ✅ Role management module
+│   │   ├── roles/           # Role management module
 │   │   │   ├── roles.tf
 │   │   │   ├── variables.tf
 │   │   │   ├── outputs.tf
-│   │   ├── policies/        # ✅ Network security policies
+│   │   ├── policies/        # Network security policies
 │   │   │   ├── policies.tf
 │   │   │   ├── variables.tf
 │   │   │   ├── outputs.tf
@@ -61,10 +61,10 @@ snowIGA
 │   ├── test_provisioning.py
 │   ├── test_role_sync.py
 ├── .github/workflows/
-│   ├── ci.yml  # ✅ CI/CD pipeline for automated testing
+│   ├── ci.yml  #  CI/CD pipeline for automated testing
 ├── .gitignore
 ├── LICENSE
-├── README.md  # 👈 You are here! 
+├── README.md  #  You are here! 
 
 ---
 ```
