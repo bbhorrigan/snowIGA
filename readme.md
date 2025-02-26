@@ -2,8 +2,8 @@
 
 # Snowflake IGA Toolkit
 
- **Snowflake IGA Helper Scripts**  
-This project provides a **collection of automation scripts** designed to **integrate Snowflake with IGA (Identity Governance and Administration) tools**, such as **SailPoint** and **Saviynt**.
+ **Snowflake IGA terraform and scripts**  
+This project provides a **collection of automation scripts** designed to **integrate Snowflake with IGA (Identity Governance and Administration) tools**, such as **SailPoint** and **Saviynt** and also some terraform for automation.
 
 ## Features
 Automates **user provisioning & deprovisioning** in Snowflake.  
