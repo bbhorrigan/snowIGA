@@ -104,8 +104,8 @@ Snowflake Version: X.X.X
 
 ---
 
-## 🔧 **Scripts Overview**
-### 🛠️ **Common Utilities**
+##  **Scripts Overview**
+###  **Common Utilities**
 | Script                    | Purpose |
 |---------------------------|---------|
 | `snowflake_connector.py`  | Establishes connection to Snowflake |
@@ -113,7 +113,7 @@ Snowflake Version: X.X.X
 | `logging_setup.py`        | Provides logging functions |
 | `utils.py`                | Helper functions for various tasks |
 
-### 🔐 **SailPoint Integration**
+### **SailPoint Integration**
 | Script                         | Purpose |
 |---------------------------------|---------|
 | `create_snowflake_users.py`     | Automates user creation in Snowflake |
@@ -121,7 +121,7 @@ Snowflake Version: X.X.X
 | `revoke_access.py`              | Removes user access as per governance rules |
 | `sync_sailpoint_snowflake.py`   | Syncs SailPoint role assignments to Snowflake |
 
-### 🔑 **Saviynt Integration**
+###  **Saviynt Integration**
 | Script                      | Purpose |
 |------------------------------|---------|
 | `provision_users.py`         | Manages user provisioning via Saviynt |
