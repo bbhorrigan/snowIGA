@@ -1,20 +1,20 @@
-### 
 
 # Snowflake IGA Toolkit
 
- **Snowflake IGA terraform and scripts**  
+**Snowflake IGA terraform and scripts**  
 This project provides a **collection of automation scripts** designed to **integrate Snowflake with IGA (Identity Governance and Administration) tools**, such as **SailPoint** and **Saviynt** and also some terraform for automation.
 
 ## Features
-Automates **user provisioning & deprovisioning** in Snowflake.  
-**Synchronizes roles** between IGA tools and Snowflake.  
-Supports **OAuth, Key Pair, and Password authentication** for Snowflake.  
-Provides **audit logs & reporting** for access governance.  
-Built-in **GitHub Actions CI/CD** for automated testing.
+- Automates **user provisioning & deprovisioning** in Snowflake.  
+- **Synchronizes roles** between IGA tools and Snowflake.  
+- Supports **OAuth, Key Pair, and Password authentication** for Snowflake.  
+- Provides **audit logs & reporting** for access governance.  
+- Built-in **GitHub Actions CI/CD** for automated testing.
 
 ---
-```
+
 ## 📂 Repository Structure
+```
 snowIGA
 ├── scripts/
 │   ├── common/          #  Shared utilities for Snowflake authentication & logging
@@ -65,10 +65,89 @@ snowIGA
 ├── .gitignore
 ├── LICENSE
 ├── README.md  #  You are here! 
+```
+---
+
+## Terraform Implementation
+
+### Overview
+The Terraform module provides Infrastructure as Code (IaC) capabilities for automating Snowflake identity governance. It enables consistent, version-controlled deployment of user accounts, role assignments, and security policies that align with your organization's IGA requirements.
+
+### Key Components
+
+#### Main Configuration (`main.tf`)
+Orchestrates the entire Terraform deployment by calling the specialized modules for users, roles, and policies. It defines the high-level architecture of your Snowflake IGA implementation.
+
+#### Provider Setup (`providers.tf`)
+Configures the Snowflake provider with authentication details and connection parameters. Supports multiple authentication methods including OAuth, username/password, and key pair authentication.
+
+#### Modules
+The Terraform implementation is organized into three core modules:
+
+##### 1. Users Module
+- **Purpose**: Automates the creation, management, and deprovisioning of Snowflake users
+- **Key Features**:
+  - Bulk user provisioning from CSV or JSON sources
+  - Customizable user properties (default roles, warehouses)
+  - Automatic user deactivation based on IGA signals
+
+##### 2. Roles Module
+- **Purpose**: Manages role hierarchies and assignments in Snowflake
+- **Key Features**:
+  - Role-based access control (RBAC) implementation
+  - Automated role assignments based on IGA group mappings
+  - Support for custom role hierarchies and inheritance
+
+##### 3. Policies Module
+- **Purpose**: Implements network security policies and access controls
+- **Key Features**:
+  - IP allowlisting for secure access
+  - Session policy management
+  - Password policy enforcement
+
+### Using the Terraform Module
+
+1. **Initialize the Terraform configuration**:
+   ```bash
+   cd terraform
+   terraform init
+   ```
+
+2. **Customize variables in `terraform.tfvars`**:
+   ```hcl
+   snowflake_account    = "your-account"
+   snowflake_region     = "us-east-1"
+   snowflake_username   = "terraform_user"
+   snowflake_private_key_path = "/path/to/key.p8"
+   
+   # User configuration
+   user_file_path = "./users.json"
+   
+   # Role configuration
+   custom_role_hierarchy = true
+   role_mapping_source = "sailpoint"
+   ```
+
+3. **Plan your changes**:
+   ```bash
+   terraform plan -out=snowflake_iga.plan
+   ```
+
+4. **Apply the configuration**:
+   ```bash
+   terraform apply snowflake_iga.plan
+   ```
+
+5. **For automated workflows, use the module outputs**:
+   ```hcl
+   # Example outputs
+   provisioned_users = module.users.user_list
+   role_assignments = module.roles.role_mappings
+   ```
 
 ---
-```
-###  **Getting Started**
+
+## Getting Started
 
 ### 🔹 **1. Clone the Repository**
 ```bash
@@ -96,7 +175,7 @@ snowflake:
 ```bash
 python scripts/common/snowflake_connector.py
 ```
-If successful, you’ll see:
+If successful, you'll see:
 ```
 ✅ Snowflake connection successful!
 Snowflake Version: X.X.X
@@ -104,8 +183,8 @@ Snowflake Version: X.X.X
 
 ---
 
-##  **Scripts Overview**
-###  **Common Utilities**
+## Scripts Overview
+### Common Utilities
 | Script                    | Purpose |
 |---------------------------|---------|
 | `snowflake_connector.py`  | Establishes connection to Snowflake |
@@ -113,7 +192,7 @@ Snowflake Version: X.X.X
 | `logging_setup.py`        | Provides logging functions |
 | `utils.py`                | Helper functions for various tasks |
 
-### **SailPoint Integration**
+### SailPoint Integration
 | Script                         | Purpose |
 |---------------------------------|---------|
 | `create_snowflake_users.py`     | Automates user creation in Snowflake |
@@ -121,7 +200,7 @@ Snowflake Version: X.X.X
 | `revoke_access.py`              | Removes user access as per governance rules |
 | `sync_sailpoint_snowflake.py`   | Syncs SailPoint role assignments to Snowflake |
 
-###  **Saviynt Integration**
+### Saviynt Integration
 | Script                      | Purpose |
 |------------------------------|---------|
 | `provision_users.py`         | Manages user provisioning via Saviynt |
@@ -129,9 +208,3 @@ Snowflake Version: X.X.X
 | `generate_access_reports.py` | Generates user access & audit reports |
 
 ---
-
-
-
-
-
-
