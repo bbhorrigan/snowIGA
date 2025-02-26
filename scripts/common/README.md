@@ -1,7 +1,8 @@
 ```markdown
-#  Utilities Scripts for Snowflake IGA
+# Common Utilities for Snowflake IGA
 
-This directory contains shared utility scripts used across the Snowflake IGA project. These scripts help with authentication, logging, configuration, and other common tasks.
+This directory contains shared utility scripts used across the Snowflake IGA project. 
+These scripts help with authentication, logging, configuration, and other common tasks.
 
 ## Files in This Directory
 
@@ -50,5 +51,3 @@ Examples:
 1. Ensure you have config.yaml set up.
 2. Import the required modules in your script.
 3. Use them to simplify Snowflake IGA automation.
-
-```
