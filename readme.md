@@ -1,4 +1,4 @@
-### **📄 `Read Me**
+### 
 
 # Snowflake IGA Helper Scripts
 
